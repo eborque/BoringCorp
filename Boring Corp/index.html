@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Boring Corp</title>
+
+  <!-- Handwritten-style font to mimic the big logo -->
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <style>
+    /* tiny reset */
+    *,*::before,*::after { box-sizing: border-box; }
+    html,body { height: 100%; margin: 0; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* overall page */
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: #444; /* dark grey background as in screenshot */
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Header banner (top) */
+    .banner {
+      background: #444; /* same dark grey as body so it blends */
+      text-align: center;
+      padding: 28px 10px;
+      border-bottom: 6px solid #3a3a3a; /* subtle separation */
+    }
+    .banner h1 {
+      margin: 0;
+      color: #fff;
+      font-weight: 400;
+      font-size: clamp(28px, 4.2vw, 64px); /* responsive large headline */
+      letter-spacing: 0.5px;
+    }
+
+    /* White band for huge logo text */
+    .logo-band {
+      background: #fff;
+      text-align: center;
+      padding: 28px 10px;
+      border-bottom: 6px solid #444; /* match background to create separation */
+    }
+    .logo-text {
+      font-family: "Permanent Marker", "Comic Sans MS", cursive;
+      color: #000;
+      margin: 0 auto;
+      /* use vw so it scales with viewport like screenshot (very large) */
+      font-size: clamp(48px, 16vw, 260px);
+      line-height: 0.85;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      /* keep it constrained to prevent overflow on narrow screens */
+      max-width: 1200px;
+    }
+
+    /* Content area below logo */
+    .content {
+      background: #444; /* same dark grey */
+      color: #fff;
+      text-align: center;
+      padding: 36px 20px 120px; /* big bottom space like screenshot */
+      min-height: calc(100vh -  (/* header + logo heights approximated */ 28px + 28px));
+    }
+
+    .lead {
+      max-width: 960px;
+      margin: 0 auto 20px;
+      font-size: clamp(16px, 1.6vw, 22px);
+      color: #eee;
+      line-height: 1.35;
+    }
+
+    /* Links stacked and centered */
+    .links {
+      display: inline-block;
+      text-align: center;
+      margin-top: 18px;
+    }
+    .links a {
+      display: block;
+      margin: 10px 0;
+      color: #8b88ff; /* bluish/purple link color similar to screenshot */
+      font-size: clamp(18px, 2.2vw, 28px);
+      text-decoration: underline;
+    }
+
+    /* small screens adjustments */
+    @media (max-width: 520px) {
+      .logo-text { font-size: clamp(44px, 30vw, 140px); line-height: 0.95; }
+      .banner h1 { font-size: clamp(20px, 6vw, 36px); }
+      .content { padding-bottom: 60px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="banner" role="banner" aria-label="Top banner">
+    <h1>Welcome, everything here is perfectly boring!</h1>
+  </header>
+
+  <section class="logo-band" aria-hidden="false">
+    <h2 class="logo-text" aria-hidden="true">BORING CORP</h2>
+  </section>
+
+  <main class="content" id="main" role="main" tabindex="-1">
+    <p class="lead">
+      We are a VERY serious business founded by 2 extremely smart young men, of course you should know this. We offer some of the best support you could ever ask for, just click a link below!
+    </p>
+
+    <nav class="links" aria-label="Quick links">
+      <a href="lawfirm.html">Need a lawyer?</a>
+      <a href="contact.html">contact us</a>
+    </nav>
+  </main>
+</body>
+</html>
